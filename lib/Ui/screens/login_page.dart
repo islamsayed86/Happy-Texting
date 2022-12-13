@@ -5,6 +5,7 @@ import 'package:happy_texting/Ui/screens/forgot_password_page.dart';
 import 'package:happy_texting/Ui/widgets/custom_button.dart';
 
 import 'package:happy_texting/Ui/widgets/custom_text_field.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -45,8 +46,8 @@ class LoginPage extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(horizontal: 9.5, vertical: 44.5),
               child: Container(
-                width: 371,
-                height: 400,
+                width: 371.w,
+                height: 361.h,
                 decoration: BoxDecoration(
                   color: const Color(0xffFFFFFF),
                   border: Border.all(
