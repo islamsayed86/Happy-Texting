@@ -67,7 +67,7 @@ class ResetPassword extends StatelessWidget {
               ),
               child: Container(
                 width: 371.w,
-                height: 361.h,
+                height: 326.h,
                 decoration: BoxDecoration(
                   color: const Color(0xffFFFFFF),
                   border: Border.all(
@@ -82,7 +82,7 @@ class ResetPassword extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 37.5.sp,
+                        height: 24.5.sp,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -104,7 +104,7 @@ class ResetPassword extends StatelessWidget {
                       ),
                       const CustomTextField(),
                       SizedBox(
-                        height: 25.sp,
+                        height: 16.sp,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -118,7 +118,6 @@ class ResetPassword extends StatelessWidget {
                               color: const Color(0xff333333),
                             ),
                           ),
-                          // CustomFormTextFiled()
                         ],
                       ),
                       SizedBox(
