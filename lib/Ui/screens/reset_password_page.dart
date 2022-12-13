@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:happy_texting/Ui/screens/forgot_password_page.dart';
-
+import 'package:happy_texting/Ui/screens/login_page.dart';
 import 'package:happy_texting/Ui/widgets/custom_button.dart';
 
 import 'package:happy_texting/Ui/widgets/custom_text_field.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-  static String id = 'Login Page';
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
+  static String id = 'Reset Password';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   systemOverlayStyle: const SystemUiOverlayStyle(
-      //     statusBarColor: Color(0xff031D4A),
-      //   ),
-      // ),
       backgroundColor: const Color(0xffF8F9FB),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 45),
@@ -29,14 +22,14 @@ class LoginPage extends StatelessWidget {
                   'Happy ',
                   style: TextStyle(
                       color: Color(0xff81CFD2),
-                      fontSize: 50,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Texting',
                   style: TextStyle(
                       color: Color(0xff031D4A),
-                      fontSize: 50,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -67,7 +60,7 @@ class LoginPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
                           Text(
-                            'Email',
+                            'New Password',
                             style: TextStyle(
                               fontFamily: 'metropolis',
                               fontSize: 16,
@@ -89,7 +82,7 @@ class LoginPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
                           Text(
-                            'Password',
+                            'Confirm New Password',
                             style: TextStyle(
                               fontFamily: 'metropolis',
                               fontSize: 16,
@@ -105,57 +98,14 @@ class LoginPage extends StatelessWidget {
                       ),
                       const CustomTextField(),
                       const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, ForgotPassword.id);
-                            },
-                            child: const Text(
-                              'Forgot password?',
-                              style: TextStyle(
-                                fontFamily: 'metropolis',
-                                fontSize: 20,
-                                fontWeight: FontWeight.normal,
-                                color: Color(0xff505050),
-                              ),
-                            ),
-                          ),
-                          // CustomFormTextFiled()
-                        ],
-                      ),
                       const SizedBox(height: 59),
-                      const CustomButton(
-                        text: 'Login',
+                      CustomButton(
+                        text: 'Send me reset instruction',
+                        ontap: () {
+                          Navigator.pushNamed(context, LoginPage.id);
+                        },
                       ),
                     ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 85,
-                vertical: 50,
-              ),
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xff6F7072),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  width: 220,
-                  height: 60,
-                  child: const Center(
-                    child: Text(
-                      'Create New Account',
-                      style: TextStyle(
-                          color: Color(0xffFFFFFF),
-                          fontSize: 16,
-                          fontFamily: 'metropolis'),
-                    ),
                   ),
                 ),
               ),

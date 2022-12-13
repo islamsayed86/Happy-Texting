@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:happy_texting/Ui/screens/forgot_password_page.dart';
+import 'package:happy_texting/Ui/screens/reset_password_page.dart';
 
 import 'Ui/screens/login_page.dart';
 
@@ -16,6 +18,8 @@ class HappyTexting extends StatelessWidget {
     return MaterialApp(
       routes: {
         LoginPage.id: (context) => const LoginPage(),
+        ResetPassword.id: (context) => const ResetPassword(),
+        ForgotPassword.id: (context) => const ForgotPassword(),
       },
       initialRoute: LoginPage.id,
       debugShowCheckedModeBanner: false,
