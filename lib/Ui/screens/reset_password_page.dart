@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:happy_texting/Ui/screens/login_page.dart';
 import 'package:happy_texting/Ui/widgets/custom_button.dart';
 
@@ -12,93 +13,119 @@ class ResetPassword extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF8F9FB),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45),
+        padding: EdgeInsets.symmetric(vertical: 25.sp),
         child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'Happy ',
                   style: TextStyle(
-                      color: Color(0xff81CFD2),
-                      fontSize: 40,
+                      color: const Color(0xff81CFD2),
+                      fontSize: 27.sp,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Texting',
                   style: TextStyle(
-                      color: Color(0xff031D4A),
-                      fontSize: 40,
+                      color: const Color(0xff031D4A),
+                      fontSize: 27.sp,
                       fontWeight: FontWeight.bold),
                 ),
               ],
             ),
+            SizedBox(
+              height: 22.h,
+            ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 9.5, vertical: 44.5),
+              padding: EdgeInsets.all(8.0.sp),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Row(
+                  children: [
+                    Text(
+                      'Reset Your Password?',
+                      style: TextStyle(
+                          color: const Color(0xff3A3C3F),
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'metropolis'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 22.5.h,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 9.5.sp,
+              ),
               child: Container(
-                width: 371,
-                height: 400,
+                width: 371.w,
+                height: 361.h,
                 decoration: BoxDecoration(
                   color: const Color(0xffFFFFFF),
                   border: Border.all(
                     style: BorderStyle.solid,
                     color: const Color(0xffE6EAEE),
-                    width: 1,
+                    width: 1.sp,
                   ),
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(4.sp),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.5),
+                  padding: EdgeInsets.symmetric(horizontal: 15.5.sp),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 37.5,
+                      SizedBox(
+                        height: 37.5.sp,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'New Password',
                             style: TextStyle(
                               fontFamily: 'metropolis',
-                              fontSize: 16,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.normal,
-                              color: Color(0xff333333),
+                              color: const Color(0xff333333),
                             ),
                           ),
                           // CustomFormTextFiled()
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.sp,
                       ),
                       const CustomTextField(),
-                      const SizedBox(
-                        height: 25,
+                      SizedBox(
+                        height: 25.sp,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Confirm New Password',
                             style: TextStyle(
                               fontFamily: 'metropolis',
-                              fontSize: 16,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.normal,
-                              color: Color(0xff333333),
+                              color: const Color(0xff333333),
                             ),
                           ),
                           // CustomFormTextFiled()
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.sp,
                       ),
                       const CustomTextField(),
-                      const SizedBox(height: 10),
-                      const SizedBox(height: 59),
+                      SizedBox(height: 81.sp),
                       CustomButton(
                         text: 'Send me reset instruction',
                         ontap: () {

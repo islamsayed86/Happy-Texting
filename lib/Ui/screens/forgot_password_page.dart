@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:happy_texting/Ui/screens/reset_password_page.dart';
 import 'package:happy_texting/Ui/widgets/custom_button.dart';
 
@@ -12,52 +13,52 @@ class ForgotPassword extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF8F9FB),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45),
+        padding: EdgeInsets.symmetric(vertical: 25.sp),
         child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'Happy ',
                   style: TextStyle(
-                      color: Color(0xff81CFD2),
-                      fontSize: 40,
+                      color: const Color(0xff81CFD2),
+                      fontSize: 27.sp,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Texting',
                   style: TextStyle(
-                      color: Color(0xff031D4A),
-                      fontSize: 40,
+                      color: const Color(0xff031D4A),
+                      fontSize: 27.sp,
                       fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 22,
+            SizedBox(
+              height: 22.h,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0.sp),
               child: GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
                 },
                 child: Row(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.arrow_back,
-                      color: Color(0xff182C4F),
-                      size: 20,
+                      color: const Color(0xff182C4F),
+                      size: 20.sp,
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 10.sp,
                     ),
                     Text(
                       'Forgot Your Password?',
                       style: TextStyle(
-                          color: Color(0xff3A3C3F),
-                          fontSize: 24,
+                          color: const Color(0xff505050),
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'metropolis'),
                     ),
@@ -65,52 +66,52 @@ class ForgotPassword extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 22,
+            SizedBox(
+              height: 22.5.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 9.5,
+              padding: EdgeInsets.symmetric(
+                horizontal: 9.5.sp,
               ),
               child: Container(
-                width: 371,
-                height: 230,
+                width: 371.w,
+                height: 201.h,
                 decoration: BoxDecoration(
                   color: const Color(0xffFFFFFF),
                   border: Border.all(
                     style: BorderStyle.solid,
                     color: const Color(0xffE6EAEE),
-                    width: 1,
+                    width: 1.w,
                   ),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.5),
+                  padding: EdgeInsets.symmetric(horizontal: 15.5.sp),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 37.5,
+                      SizedBox(
+                        height: 37.5.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Email',
                             style: TextStyle(
                               fontFamily: 'metropolis',
-                              fontSize: 16,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.normal,
-                              color: Color(0xff333333),
+                              color: const Color(0xff333333),
                             ),
                           ),
                           // CustomFormTextFiled()
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const CustomTextField(),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       CustomButton(
                         ontap: () {
                           Navigator.pushNamed(context, ResetPassword.id);

@@ -20,31 +20,31 @@ class LoginPage extends StatelessWidget {
       // ),
       backgroundColor: const Color(0xffF8F9FB),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 45),
+        padding: EdgeInsets.symmetric(vertical: 45.sp),
         child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
                   'Happy ',
                   style: TextStyle(
-                      color: Color(0xff81CFD2),
-                      fontSize: 50,
+                      color: const Color(0xff81CFD2),
+                      fontSize: 50.sp,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'Texting',
                   style: TextStyle(
-                      color: Color(0xff031D4A),
-                      fontSize: 50,
+                      color: const Color(0xff031D4A),
+                      fontSize: 50.sp,
                       fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 9.5, vertical: 44.5),
+                  EdgeInsets.symmetric(horizontal: 9.5.sp, vertical: 44.5.sp),
               child: Container(
                 width: 371.w,
                 height: 361.h,
@@ -55,57 +55,57 @@ class LoginPage extends StatelessWidget {
                     color: const Color(0xffE6EAEE),
                     width: 1,
                   ),
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(4.sp),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.5),
+                  padding: EdgeInsets.symmetric(horizontal: 15.5.sp),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 37.5,
+                      SizedBox(
+                        height: 37.5.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Email',
                             style: TextStyle(
                               fontFamily: 'metropolis',
-                              fontSize: 16,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.normal,
-                              color: Color(0xff333333),
+                              color: const Color(0xff333333),
                             ),
                           ),
                           // CustomFormTextFiled()
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const CustomTextField(),
-                      const SizedBox(
-                        height: 25,
+                      SizedBox(
+                        height: 25.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Password',
                             style: TextStyle(
                               fontFamily: 'metropolis',
-                              fontSize: 16,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.normal,
-                              color: Color(0xff333333),
+                              color: const Color(0xff333333),
                             ),
                           ),
                           // CustomFormTextFiled()
                         ],
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       const CustomTextField(),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -113,20 +113,20 @@ class LoginPage extends StatelessWidget {
                             onTap: () {
                               Navigator.pushNamed(context, ForgotPassword.id);
                             },
-                            child: const Text(
+                            child: Text(
                               'Forgot password?',
                               style: TextStyle(
                                 fontFamily: 'metropolis',
-                                fontSize: 20,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.normal,
-                                color: Color(0xff505050),
+                                color: const Color(0xff505050),
                               ),
                             ),
                           ),
                           // CustomFormTextFiled()
                         ],
                       ),
-                      const SizedBox(height: 59),
+                      SizedBox(height: 59.h),
                       const CustomButton(
                         text: 'Login',
                       ),
@@ -135,26 +135,26 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 50.h),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 85,
-                vertical: 50,
+              padding: EdgeInsets.symmetric(
+                horizontal: 85.sp,
               ),
               child: GestureDetector(
                 onTap: () {},
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color(0xff6F7072),
-                    borderRadius: BorderRadius.circular(8),
+                    color: const Color(0xff505050),
+                    borderRadius: BorderRadius.circular(4.h),
                   ),
-                  width: 220,
-                  height: 60,
-                  child: const Center(
+                  width: 220.w,
+                  height: 48.h,
+                  child: Center(
                     child: Text(
                       'Create New Account',
                       style: TextStyle(
-                          color: Color(0xffFFFFFF),
-                          fontSize: 16,
+                          color: const Color(0xffFFFFFF),
+                          fontSize: 16.sp,
                           fontFamily: 'metropolis'),
                     ),
                   ),

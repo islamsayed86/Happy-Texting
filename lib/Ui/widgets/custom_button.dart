@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, this.ontap, required this.text});
@@ -11,16 +12,16 @@ class CustomButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: const Color(0xff031D4A),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(4.sp),
         ),
-        width: double.infinity,
-        height: 60,
+        width: 340.w,
+        height: 48.h,
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(
-                color: Color(0xffFFFFFF),
-                fontSize: 16,
+            style: TextStyle(
+                color: const Color(0xffFFFFFF),
+                fontSize: 16.sp,
                 fontFamily: 'metropolis'),
           ),
         ),
