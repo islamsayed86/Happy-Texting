@@ -25,7 +25,7 @@ class HappyTexting extends StatelessWidget {
             routes: {
               LoginPage.id: (context) => const LoginPage(),
               ResetPassword.id: (context) => const ResetPassword(),
-              ForgotPassword.id: (context) => const ForgotPassword(),
+              ForgotPassword.id: (context) => ForgotPassword(),
             },
             initialRoute: LoginPage.id,
             debugShowCheckedModeBanner: false,

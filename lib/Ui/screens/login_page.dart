@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'package:happy_texting/Ui/screens/forgot_password_page.dart';
-
-import 'package:happy_texting/Ui/widgets/custom_button.dart';
-
-import 'package:happy_texting/Ui/widgets/custom_text_field.dart';
+import 'package:happy_texting/core/widgets/Custom_GestureDetector.dart';
+import 'package:happy_texting/core/widgets/Logo.dart';
+import 'package:happy_texting/core/widgets/custom_button.dart';
+import 'package:happy_texting/core/widgets/custom_container.dart';
+import 'package:happy_texting/core/widgets/custom_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:happy_texting/core/constants/colors.dart';
+import 'package:happy_texting/core/widgets/custom_text_style.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -15,48 +17,22 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       // appBar: AppBar(
       //   systemOverlayStyle: const SystemUiOverlayStyle(
-      //     statusBarColor: Color(0xff031D4A),
+      //     statusBarColor: kDarkBlue,
       //   ),
       // ),
-      backgroundColor: const Color(0xffF8F9FB),
+      backgroundColor: kLightGrey,
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 45.sp),
         child: ListView(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Happy ',
-                  style: TextStyle(
-                      color: const Color(0xff81CFD2),
-                      fontSize: 50.sp,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'Texting',
-                  style: TextStyle(
-                      color: const Color(0xff031D4A),
-                      fontSize: 50.sp,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
+            Logo(
+              size: 50.sp,
             ),
             Padding(
               padding:
                   EdgeInsets.symmetric(horizontal: 9.5.sp, vertical: 44.5.sp),
-              child: Container(
-                width: 371.w,
-                height: 361.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xffFFFFFF),
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: const Color(0xffE6EAEE),
-                    width: 1,
-                  ),
-                  borderRadius: BorderRadius.circular(4.sp),
-                ),
+              child: CustomContainer(
+                hight: 361.h,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.5.sp),
                   child: Column(
@@ -67,14 +43,9 @@ class LoginPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'Email',
-                            style: TextStyle(
-                              fontFamily: 'metropolis',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.normal,
-                              color: const Color(0xff333333),
-                            ),
+                          CustomTextStyle(
+                            yourText: 'Email',
+                            size: 13.sp,
                           ),
                           // CustomFormTextFiled()
                         ],
@@ -89,14 +60,9 @@ class LoginPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'Password',
-                            style: TextStyle(
-                              fontFamily: 'metropolis',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.normal,
-                              color: const Color(0xff333333),
-                            ),
+                          CustomTextStyle(
+                            yourText: 'password',
+                            size: 13.sp,
                           ),
                           // CustomFormTextFiled()
                         ],
@@ -113,14 +79,10 @@ class LoginPage extends StatelessWidget {
                             onTap: () {
                               Navigator.pushNamed(context, ForgotPassword.id);
                             },
-                            child: Text(
-                              'Forgot password?',
-                              style: TextStyle(
-                                fontFamily: 'metropolis',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.normal,
-                                color: const Color(0xff505050),
-                              ),
+                            child: CustomTextStyle(
+                              yourText: 'Forgot password?',
+                              size: 16.sp,
+                              color: kGrey,
                             ),
                           ),
                           // CustomFormTextFiled()
@@ -140,26 +102,7 @@ class LoginPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: 85.sp,
               ),
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xff505050),
-                    borderRadius: BorderRadius.circular(4.h),
-                  ),
-                  width: 220.w,
-                  height: 48.h,
-                  child: Center(
-                    child: Text(
-                      'Create New Account',
-                      style: TextStyle(
-                          color: const Color(0xffFFFFFF),
-                          fontSize: 16.sp,
-                          fontFamily: 'metropolis'),
-                    ),
-                  ),
-                ),
-              ),
+              child: const CustomGestureDetector(),
             ),
           ],
         ),

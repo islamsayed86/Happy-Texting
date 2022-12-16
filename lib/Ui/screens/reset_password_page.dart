@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:happy_texting/Ui/screens/login_page.dart';
-import 'package:happy_texting/Ui/widgets/custom_button.dart';
-
-import 'package:happy_texting/Ui/widgets/custom_text_field.dart';
+import 'package:happy_texting/core/widgets/Logo.dart';
+import 'package:happy_texting/core/widgets/custom_button.dart';
+import 'package:happy_texting/core/widgets/custom_container.dart';
+import 'package:happy_texting/core/widgets/custom_text_field.dart';
+import 'package:happy_texting/core/constants/colors.dart';
+import 'package:happy_texting/core/widgets/custom_text_style.dart';
+import 'package:happy_texting/data/models/enter_email.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
   static String id = 'Reset Password';
+
   @override
   Widget build(BuildContext context) {
+    EnterEmail email = ModalRoute.of(context)!.settings.arguments as EnterEmail;
     return Scaffold(
-      backgroundColor: const Color(0xffF8F9FB),
+      backgroundColor: kLightGrey,
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 25.sp),
         child: ListView(
@@ -19,19 +25,8 @@ class ResetPassword extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Happy ',
-                  style: TextStyle(
-                      color: const Color(0xff81CFD2),
-                      fontSize: 27.sp,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'Texting',
-                  style: TextStyle(
-                      color: const Color(0xff031D4A),
-                      fontSize: 27.sp,
-                      fontWeight: FontWeight.bold),
+                Logo(
+                  size: 27.sp,
                 ),
               ],
             ),
@@ -46,13 +41,10 @@ class ResetPassword extends StatelessWidget {
                 },
                 child: Row(
                   children: [
-                    Text(
-                      'Reset Your Password?',
-                      style: TextStyle(
-                          color: const Color(0xff3A3C3F),
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'metropolis'),
+                    CustomTextStyle(
+                      yourText: 'Reset Your Password?',
+                      color: kDarkGrey,
+                      size: 24.sp,
                     ),
                   ],
                 ),
@@ -65,18 +57,8 @@ class ResetPassword extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: 9.5.sp,
               ),
-              child: Container(
-                width: 371.w,
-                height: 326.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xffFFFFFF),
-                  border: Border.all(
-                    style: BorderStyle.solid,
-                    color: const Color(0xffE6EAEE),
-                    width: 1.sp,
-                  ),
-                  borderRadius: BorderRadius.circular(4.sp),
-                ),
+              child: CustomContainer(
+                hight: 326.h,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.5.sp),
                   child: Column(
@@ -87,16 +69,11 @@ class ResetPassword extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'New Password',
-                            style: TextStyle(
-                              fontFamily: 'metropolis',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.normal,
-                              color: const Color(0xff333333),
-                            ),
-                          ),
-                          // CustomFormTextFiled()
+                          CustomTextStyle(
+                            yourText: 'New Password',
+                            size: 13.sp,
+                            color: kDarkerGrey,
+                          )
                         ],
                       ),
                       SizedBox(
@@ -109,14 +86,10 @@ class ResetPassword extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'Confirm New Password',
-                            style: TextStyle(
-                              fontFamily: 'metropolis',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.normal,
-                              color: const Color(0xff333333),
-                            ),
+                          CustomTextStyle(
+                            yourText: 'Confirm New Password',
+                            size: 13.sp,
+                            color: kDarkerGrey,
                           ),
                         ],
                       ),
@@ -135,6 +108,19 @@ class ResetPassword extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 25.h,
+            ),
+            Center(
+              child: CustomTextStyle(
+                yourText: 'your email is : ${email.yourEmail} ',
+                size: 16.sp,
+                color: kGrey,
+              ),
+            ),
+            SizedBox(
+              height: 10.h,
             ),
           ],
         ),
