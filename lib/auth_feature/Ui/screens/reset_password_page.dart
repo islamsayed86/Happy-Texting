@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/Ui/screens/reset_password_page.dart';
-import 'package:happy_texting/core/constants/colors.dart';
-import 'package:happy_texting/core/widgets/Logo.dart';
-import 'package:happy_texting/core/widgets/custom_button.dart';
-import 'package:happy_texting/core/widgets/custom_container.dart';
-import 'package:happy_texting/core/widgets/custom_text_field.dart';
-import 'package:happy_texting/core/widgets/custom_text_style.dart';
-import 'package:happy_texting/core/widgets/show_snackbar.dart';
-import 'package:happy_texting/data/models/enter_email.dart';
+import 'package:happy_texting/auth_feature/Ui/screens/login_page.dart';
+import 'package:happy_texting/auth_feature/core/widgets/Logo.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_button.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_container.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_text_field.dart';
+import 'package:happy_texting/auth_feature/core/constants/colors.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_text_style.dart';
+import 'package:happy_texting/auth_feature/core/widgets/show_snackbar.dart';
+import 'package:happy_texting/auth_feature/data/models/enter_email.dart';
 
-class ForgotPassword extends StatelessWidget {
-  ForgotPassword({super.key});
-  static String id = 'Forgot Password';
-  String? email;
-  GlobalKey<FormState> formKey = GlobalKey();
+class ResetPassword extends StatelessWidget {
+  ResetPassword({super.key});
+  static String id = 'Reset Password';
+  final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
+    EnterEmail email = ModalRoute.of(context)!.settings.arguments as EnterEmail;
     return Scaffold(
       backgroundColor: kLightGrey,
       body: Padding(
@@ -45,16 +45,8 @@ class ForgotPassword extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.arrow_back,
-                        color: const Color(0xff182C4F),
-                        size: 20.sp,
-                      ),
-                      SizedBox(
-                        width: 10.sp,
-                      ),
                       CustomTextStyle(
-                        yourText: 'Forgot Your Password?',
+                        yourText: 'Reset Your Password?',
                         color: kDarkGrey,
                         size: 24.sp,
                       ),
@@ -70,49 +62,73 @@ class ForgotPassword extends StatelessWidget {
                   horizontal: 9.5.sp,
                 ),
                 child: CustomContainer(
-                  hight: 201.h,
+                  hight: 326.h,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.5.sp),
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 37.5.h,
+                          height: 24.5.sp,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             CustomTextStyle(
-                              yourText: 'Email',
+                              yourText: 'New Password',
                               size: 13.sp,
                               color: kDarkerGrey,
                             )
-                            // CustomFormTextFiled()
                           ],
                         ),
                         SizedBox(
-                          height: 10.h,
+                          height: 10.sp,
                         ),
-                        CustomTextFormField(
-                          onChanged: (data) {
-                            email = data;
-                          },
+                        const CustomTextFormField(),
+                        SizedBox(
+                          height: 16.sp,
                         ),
-                        SizedBox(height: 20.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CustomTextStyle(
+                              yourText: 'Confirm New Password',
+                              size: 13.sp,
+                              color: kDarkerGrey,
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.sp,
+                        ),
+                        const CustomTextFormField(),
+                        SizedBox(height: 81.sp),
                         CustomButton(
+                          text: 'Send me reset instruction',
                           ontap: () {
                             if (formKey.currentState!.validate()) {
-                              Navigator.pushNamed(context, ResetPassword.id,
-                                  arguments: EnterEmail(yourEmail: email!));
+                              Navigator.pushNamed(context, LoginPage.id);
                             } else {
-                              showSnackBar(context, 'the filed is required');
+                              showSnackBar(context, 'Enter your email');
                             }
                           },
-                          text: 'Send me reset instruction',
                         ),
                       ],
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 25.h,
+              ),
+              Center(
+                child: CustomTextStyle(
+                  yourText: 'your email is : ${email.yourEmail} ',
+                  size: 16.sp,
+                  color: kGrey,
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
               ),
             ],
           ),

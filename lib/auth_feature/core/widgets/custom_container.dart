@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/core/constants/colors.dart';
+import 'package:happy_texting/auth_feature/core/constants/colors.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({super.key, this.hight, this.child});

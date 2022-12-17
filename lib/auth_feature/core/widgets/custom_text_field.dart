@@ -10,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       validator: ((data) {
         if (data!.isEmpty) {}
-        return 'filled is required';
+        return 'field is required';
       }),
       onChanged: onChanged,
       decoration: const InputDecoration(

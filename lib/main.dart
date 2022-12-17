@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/Ui/screens/forgot_password_page.dart';
-import 'package:happy_texting/Ui/screens/reset_password_page.dart';
+import 'package:happy_texting/auth_feature/data/models/app_router.dart';
 
-import 'Ui/screens/login_page.dart';
+import 'auth_feature/Ui/screens/login_page.dart';
 
 void main() {
   runApp(const HappyTexting());
@@ -22,11 +21,7 @@ class HappyTexting extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
-            routes: {
-              LoginPage.id: (context) => LoginPage(),
-              ResetPassword.id: (context) => const ResetPassword(),
-              ForgotPassword.id: (context) => ForgotPassword(),
-            },
+            routes: myRoutes,
             initialRoute: LoginPage.id,
             debugShowCheckedModeBanner: false,
           );

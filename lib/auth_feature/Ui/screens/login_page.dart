@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:happy_texting/Ui/screens/forgot_password_page.dart';
-import 'package:happy_texting/core/widgets/Custom_GestureDetector.dart';
-import 'package:happy_texting/core/widgets/Logo.dart';
-import 'package:happy_texting/core/widgets/custom_button.dart';
-import 'package:happy_texting/core/widgets/custom_container.dart';
-import 'package:happy_texting/core/widgets/custom_text_field.dart';
+import 'package:happy_texting/auth_feature/Ui/screens/forgot_password_page.dart';
+import 'package:happy_texting/auth_feature/core/widgets/Custom_GestureDetector.dart';
+import 'package:happy_texting/auth_feature/core/widgets/Logo.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_button.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_container.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/core/constants/colors.dart';
-import 'package:happy_texting/core/widgets/custom_text_style.dart';
+import 'package:happy_texting/auth_feature/core/constants/colors.dart';
+import 'package:happy_texting/auth_feature/core/widgets/custom_text_style.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
   static String id = 'Login Page';
-  GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState>? formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
