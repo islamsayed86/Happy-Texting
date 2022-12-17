@@ -23,7 +23,7 @@ class HappyTexting extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             routes: {
-              LoginPage.id: (context) => const LoginPage(),
+              LoginPage.id: (context) => LoginPage(),
               ResetPassword.id: (context) => const ResetPassword(),
               ForgotPassword.id: (context) => ForgotPassword(),
             },

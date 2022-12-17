@@ -79,7 +79,7 @@ class ResetPassword extends StatelessWidget {
                       SizedBox(
                         height: 10.sp,
                       ),
-                      const CustomTextField(),
+                      const CustomTextFormField(),
                       SizedBox(
                         height: 16.sp,
                       ),
@@ -96,7 +96,7 @@ class ResetPassword extends StatelessWidget {
                       SizedBox(
                         height: 10.sp,
                       ),
-                      const CustomTextField(),
+                      const CustomTextFormField(),
                       SizedBox(height: 81.sp),
                       CustomButton(
                         text: 'Send me reset instruction',
