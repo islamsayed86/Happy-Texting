@@ -10,6 +10,7 @@ import 'package:happy_texting/auth_feature/core/widgets/custom_text_style.dart';
 import 'package:happy_texting/auth_feature/core/widgets/show_snackbar.dart';
 import 'package:happy_texting/auth_feature/data/models/enter_email.dart';
 
+// ignore: must_be_immutable
 class ForgotPassword extends StatelessWidget {
   ForgotPassword({super.key});
   static String id = 'Forgot Password';

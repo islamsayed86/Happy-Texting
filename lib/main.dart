@@ -21,7 +21,7 @@ class HappyTexting extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
-            routes: myRoutes,
+            routes: appRoutes,
             initialRoute: LoginPage.id,
             debugShowCheckedModeBanner: false,
           );
