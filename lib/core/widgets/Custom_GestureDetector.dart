@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/auth_feature/core/constants/colors.dart';
-import 'package:happy_texting/auth_feature/core/widgets/custom_text_style.dart';
+import 'package:happy_texting/core/constants/colors.dart';
+import 'package:happy_texting/core/widgets/custom_text_style.dart';
 
 class CustomGestureDetector extends StatelessWidget {
   const CustomGestureDetector({

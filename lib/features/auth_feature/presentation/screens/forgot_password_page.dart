@@ -1,14 +1,16 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/auth_feature/Ui/screens/reset_password_page.dart';
-import 'package:happy_texting/auth_feature/core/constants/colors.dart';
-import 'package:happy_texting/auth_feature/core/widgets/Logo.dart';
-import 'package:happy_texting/auth_feature/core/widgets/custom_button.dart';
-import 'package:happy_texting/auth_feature/core/widgets/custom_container.dart';
-import 'package:happy_texting/auth_feature/core/widgets/custom_text_field.dart';
-import 'package:happy_texting/auth_feature/core/widgets/custom_text_style.dart';
-import 'package:happy_texting/auth_feature/core/widgets/show_snackbar.dart';
-import 'package:happy_texting/auth_feature/data/models/enter_email.dart';
+
+import 'package:happy_texting/core/constants/colors.dart';
+import 'package:happy_texting/core/widgets/Logo.dart';
+import 'package:happy_texting/core/widgets/custom_button.dart';
+import 'package:happy_texting/core/widgets/custom_container.dart';
+import 'package:happy_texting/core/widgets/custom_text_field.dart';
+import 'package:happy_texting/core/widgets/custom_text_style.dart';
+import 'package:happy_texting/core/widgets/show_snackbar.dart';
+import 'package:happy_texting/features/auth_feature/presentation/screens/reset_password_page.dart';
+// import 'package:happy_texting/auth_feature/data/models/enter_email.dart';
 
 // ignore: must_be_immutable
 class ForgotPassword extends StatelessWidget {
@@ -94,16 +96,22 @@ class ForgotPassword extends StatelessWidget {
                           height: 10.h,
                         ),
                         CustomTextFormField(
+                          validator: (email) =>
+                              email != null && EmailValidator.validate(email)
+                                  ? null
+                                  : "Please enter a valid email",
                           onChanged: (data) {
                             email = data;
                           },
+                          obscureText: false,
                         ),
                         SizedBox(height: 20.h),
                         CustomButton(
                           ontap: () {
                             if (formKey.currentState!.validate()) {
                               Navigator.pushNamed(context, ResetPassword.id,
-                                  arguments: EnterEmail(yourEmail: email!));
+                                  arguments: email);
+                              // EnterEmail(yourEmail: email!));
                             } else {
                               showSnackBar(context, 'the filed is required');
                             }

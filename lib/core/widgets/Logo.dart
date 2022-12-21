@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:happy_texting/auth_feature/core/constants/colors.dart';
+import 'package:happy_texting/core/constants/colors.dart';
 
 class Logo extends StatelessWidget {
   const Logo({
