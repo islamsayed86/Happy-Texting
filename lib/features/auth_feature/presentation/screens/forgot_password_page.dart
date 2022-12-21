@@ -1,7 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/auth_feature/presentation/screens/reset_password_page.dart';
+
 import 'package:happy_texting/core/constants/colors.dart';
 import 'package:happy_texting/core/widgets/Logo.dart';
 import 'package:happy_texting/core/widgets/custom_button.dart';
@@ -9,6 +9,7 @@ import 'package:happy_texting/core/widgets/custom_container.dart';
 import 'package:happy_texting/core/widgets/custom_text_field.dart';
 import 'package:happy_texting/core/widgets/custom_text_style.dart';
 import 'package:happy_texting/core/widgets/show_snackbar.dart';
+import 'package:happy_texting/features/auth_feature/presentation/screens/reset_password_page.dart';
 // import 'package:happy_texting/auth_feature/data/models/enter_email.dart';
 
 // ignore: must_be_immutable

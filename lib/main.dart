@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:happy_texting/auth_feature/data/models/app_router.dart';
-
-import 'auth_feature/presentation/screens/login_page.dart';
+import 'package:happy_texting/features/auth_feature/data/models/app_router.dart';
+import 'package:happy_texting/features/auth_feature/presentation/screens/login_page.dart';
 
 void main() {
   runApp(const HappyTexting());
